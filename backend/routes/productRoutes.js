@@ -1,13 +1,8 @@
 const express = require("express");
-const Products = require("../models/product");
+const { GetProducts } = require("../controllers/productController");
 
-const app = express();
+const router = express.Router();
 
+router.get("/products" , GetProducts);
 
-
-app.get("/", async (req, res) => {
-    res.send("Product API is running");
-});
-
-
-
+module.exports = router;
