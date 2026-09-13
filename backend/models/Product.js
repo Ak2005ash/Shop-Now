@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
+mongoose.connect(`mongodb://127.0.0.1:27017/shopnowDB`);
 
-const productSchema = new mongoose.Schema({
+const productSchema = mongoose.Schema({
     _id: {
         type: String,
         required: true

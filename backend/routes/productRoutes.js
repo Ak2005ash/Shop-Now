@@ -1,15 +1,13 @@
 const express = require("express");
-const Product = require("../models/Product");
+const Products = require("../models/product");
 
-const router = express.Router();
+const app = express();
 
-router.get("/", async (req, res) => {
-    try {
-        const products = await Product.find();
-        res.json(products);
-    } catch (error) {
-        res.status(500).json({ error: error.message });
-    }
+
+
+app.get("/", async (req, res) => {
+    res.send("Product API is running");
 });
 
-module.exports = router;
+
+
